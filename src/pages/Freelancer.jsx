@@ -105,38 +105,7 @@ const Freelancer = () => {
 
    
 
- 
-      <div className="cards p-4 p-lg-5 mb-5">
-        <h3 className="fw-bold mb-4 text-center">
-          Types of <span className="text-primary">Projects I Handle</span>
-        </h3>
-        <div className="row">
-          <div className="col-12 col-md-6 col-lg-3 mb-3">
-            <div className="d-flex align-items-center mb-2">
-              <i className="fa-solid fa-check text-success me-2"></i>
-              <span>Portfolio Websites</span>
-            </div>
-          </div>
-          <div className="col-12 col-md-6 col-lg-3 mb-3">
-            <div className="d-flex align-items-center mb-2">
-              <i className="fa-solid fa-check text-success me-2"></i>
-              <span>Small Business Websites</span>
-            </div>
-          </div>
-          <div className="col-12 col-md-6 col-lg-3 mb-3">
-            <div className="d-flex align-items-center mb-2">
-              <i className="fa-solid fa-check text-success me-2"></i>
-              <span>Simple E-commerce Stores</span>
-            </div>
-          </div>
-          <div className="col-12 col-md-6 col-lg-3 mb-3">
-            <div className="d-flex align-items-center mb-2">
-              <i className="fa-solid fa-check text-success me-2"></i>
-              <span>Website Redesigns</span>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* CTA Section */}
       <div className="text-center">

@@ -79,7 +79,7 @@ const Skill = () => {
       </div>
 
       {/* Legend / Info */}
-      <div className="row mt-5">
+      {/* <div className="row mt-5">
         <div className="col-12">
           <div className="cards p-4">
             <div className="row text-center">
@@ -110,7 +110,7 @@ const Skill = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 };

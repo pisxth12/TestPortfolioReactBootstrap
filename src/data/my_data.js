@@ -1,5 +1,5 @@
 import img_01 from "../assets/profile.JPG"
-import img_02 from "../assets/sornpiseth.jpg"
+import img_02 from "../assets/seth.JPG"
 export const data = {
   name: "Sorn Piseth",
   img_developer: img_01,
