@@ -1,4 +1,4 @@
-import img_01 from "../assets/developer.jpg"
+import img_01 from "../assets/profile.JPG"
 import img_02 from "../assets/sornpiseth.jpg"
 export const data = {
   name: "Sorn Piseth",

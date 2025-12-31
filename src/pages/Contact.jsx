@@ -3,16 +3,29 @@ import { data } from "../data/my_data";
 
 const Contact = () => {
   const [form , setForm] = useState({name:"", email:"", subject:"", message:""})
-  
+  const [loading , setLoading] = useState(false);
   const handleChange = (e) => {
-    const value =  e.target.name;
-
+    const {name, value} =  e.target;
+    setForm({...form, [name]: value});
   }
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    setForm({name:"", email:"", subject:"", message:""});87
-    
+    setLoading(true);
+    try{
+      await new Promise(resolve => setTimeout(resolve, 2000));
+       alert("✅ Message sent successfully! I'll get back to you soon.");
+        setForm({
+      name: "",
+      email: "",
+      subject: "",
+      message: ""});
+    }catch(err){
+      console.error(err);
+      
+    }finally{
+      setLoading(false);
+    }
   };
 
   return (
@@ -21,7 +34,6 @@ const Contact = () => {
       className="container d-flex flex-column flex-lg-row justify-content-between align-items-center py-5"
       style={{ minHeight: "100vh" }}
     >
-      {/* Left Side - Contact Info */}
       <div className="contact-left col-12 col-lg-5 mb-5 mb-lg-0">
         <h1 className="display-4 fw-bold mb-4 text-center text-lg-start">
           Get In <span className="text-primary">Touch</span>
@@ -31,9 +43,7 @@ const Contact = () => {
           I'm just a message away!
         </p>
         
-        {/* Contact Methods */}
         <div className="contact-methods">
-          {/* Email */}
           <div className="cards mb-4">
             <div className="card-body p-4">
               <div className="d-flex align-items-center">
@@ -144,7 +154,7 @@ const Contact = () => {
                   </label>
                   <input
                   value={form.name}
-                  onChange={e => setForm(prev => e.target.value)}
+                  onChange={handleChange}
                   name="name"
                     type="text"
                     id="name"
@@ -161,7 +171,7 @@ const Contact = () => {
                   </label>
                   <input
                   value={form.email}
-                  onChange={e => setForm(prev => e.target.value)}
+                  onChange={handleChange}
                   name="email"
                     type="email"
                     id="email"
@@ -179,7 +189,7 @@ const Contact = () => {
               </label>
               <input
               value={form.subject}
-              onChange={e => setForm(prev => e.target.value)}
+              onChange={handleChange}
               name="subject"
                 type="text"
                 id="subject"
@@ -195,7 +205,7 @@ const Contact = () => {
               </label>
               <textarea
               value={form.message}
-              onChange={e => setForm(prev => e.target.value)}
+              onChange={handleChange}
               name="message"
                 id="message"
                 rows="5"
@@ -206,14 +216,24 @@ const Contact = () => {
             </div>
             
             <div className="d-grid">
-              <button
-                type="submit"
-                className="btn btn-primary btn-lg fw-bold py-3"
-              >
-                <i className="fa-solid fa-paper-plane me-2"></i>
-                Send Message
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="btn btn-primary btn-lg fw-bold py-3"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <span className="spinner-border spinner-border-sm me-2" role="status"></span>
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <i className="fa-solid fa-paper-plane me-2"></i>
+                  Send Message
+                </>
+              )}
+            </button>
+          </div>
           </form>
         </div>
       </div>

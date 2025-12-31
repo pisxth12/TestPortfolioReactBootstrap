@@ -3,48 +3,59 @@ const Freelancer = () => {
     {
       icon: "fa-laptop-code",
       title: "Web Development",
-      description: "Building responsive and modern websites using React, Bootstrap, and modern web technologies.",
+      description: "Building responsive websites using HTML, CSS, JavaScript, React, and modern web technologies.",
       features: ["Frontend Development", "Responsive Design", "Performance Optimization", "Cross-browser Compatibility"]
     },
     {
-      icon: "fa-mobile-screen-button",
-      title: "Mobile Development",
-      description: "Creating mobile applications with React Native for iOS and Android platforms.",
-      features: ["React Native", "iOS & Android", "UI/UX Design", "App Store Deployment"]
+      icon: "fa-store",
+      title: "Small E-commerce",
+      description: "Creating simple online stores with product listings, cart functionality, and checkout systems.",
+      features: ["Product Management", "Shopping Cart", "User Authentication", "Basic Payment Integration"]
     },
     {
       icon: "fa-paintbrush",
       title: "UI/UX Design",
-      description: "Designing user-friendly interfaces with modern design principles and user experience focus.",
-      features: ["Wireframing", "Prototyping", "User Testing", "Design Systems"]
+      description: "Designing clean, user-friendly interfaces with modern design principles.",
+      features: ["Wireframing", "Prototyping", "Responsive Layouts", "User-Centric Design"]
     },
     {
-      icon: "fa-database",
-      title: "Backend Development",
-      description: "Developing robust server-side applications with Node.js, Express, and database management.",
-      features: ["API Development", "Database Design", "Authentication", "Server Deployment"]
+      icon: "fa-code",
+      title: "Website Maintenance",
+      description: "Updating existing websites, fixing bugs, and adding new features to keep your site running smoothly.",
+      features: ["Bug Fixes", "Content Updates", "Performance Tuning", "Security Updates"]
     }
   ];
 
-  const testimonials = [
+  const process = [
     {
-      name: "John Smith",
-      role: "CEO at TechCorp",
-      text: "Excellent work! Delivered exactly what we needed ahead of schedule.",
-      rating: 5
+      step: 1,
+      title: "Discovery & Planning",
+      description: "Understanding your requirements and planning the project approach."
     },
     {
-      name: "Sarah Johnson",
-      role: "Product Manager",
-      text: "Professional and talented developer. Will definitely work with again!",
-      rating: 5
+      step: 2,
+      title: "Design & Development",
+      description: "Creating the design and coding the solution with your feedback."
     },
     {
-      name: "Michael Brown",
-      role: "Startup Founder",
-      text: "Transformed our idea into a beautiful, functional website. Highly recommended!",
-      rating: 4
+      step: 3,
+      title: "Testing & Refinement",
+      description: "Thorough testing and making improvements based on results."
+    },
+    {
+      step: 4,
+      title: "Launch & Support",
+      description: "Deploying the project and providing post-launch support."
     }
+  ];
+
+  const skills = [
+    { name: "HTML/CSS", level: 85 },
+    { name: "JavaScript", level: 70 },
+    { name: "React", level: 70 },
+    { name: "Bootstrap", level: 80 },
+    { name: "PHP/Laravel", level: 70 },
+    { name: "Git/GitHub", level: 70 }
   ];
 
   return (
@@ -55,13 +66,12 @@ const Freelancer = () => {
       {/* Header */}
       <div className="text-center mb-5">
         <h1 className="display-4 fw-bold mb-3">
-          Freelance <span className="text-primary">Services</span>
+          My <span className="text-primary">Services</span>
         </h1>
         <div className="line mx-auto w-50 w-md-75 w-lg-50"></div>
-
         <p className="fs-5 w-75 mx-auto">
-          I offer professional freelance services to help bring your digital ideas to life.
-          From concept to deployment, I ensure high-quality results.
+          I specialize in building responsive websites and small e-commerce solutions. 
+          Currently expanding my skills through personal projects and freelance work.
         </p>
       </div>
 
@@ -78,12 +88,12 @@ const Freelancer = () => {
                 <p className="mb-4">{service.description}</p>
               </div>
               <div className="mt-auto">
-                <h6 className="fw-bold mb-3">Key Features:</h6>
+                <h6 className="fw-bold mb-3">What I Offer:</h6>
                 <ul className="list-unstyled">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="mb-2">
                       <i className="fa-solid fa-check text-success me-2"></i>
-                      {feature}
+                      <small>{feature}</small>
                     </li>
                   ))}
                 </ul>
@@ -93,137 +103,69 @@ const Freelancer = () => {
         ))}
       </div>
 
-      {/* Why Choose Me & Process */}
-      <div className="row g-4 mb-5">
-        <div className="col-12 col-lg-6">
-          <div className="cards p-4 h-100">
-            <h3 className="fw-bold mb-4">
-              Why <span className="text-primary">Choose Me?</span>
-            </h3>
-            <div className="d-flex align-items-start mb-3">
-              <div className="bg-success bg-opacity-10 p-2 rounded-circle me-3">
-                <i className="fa-solid fa-clock text-success"></i>
-              </div>
-              <div>
-                <h5 className="fw-bold">On-Time Delivery</h5>
-                <p>I respect deadlines and ensure timely project completion.</p>
-              </div>
-            </div>
-            <div className="d-flex align-items-start mb-3">
-              <div className="bg-info bg-opacity-10 p-2 rounded-circle me-3">
-                <i className="fa-solid fa-headset text-info"></i>
-              </div>
-              <div>
-                <h5 className="fw-bold">24/7 Support</h5>
-                <p>Continuous communication and support throughout the project.</p>
-              </div>
-            </div>
-            <div className="d-flex align-items-start">
-              <div className="bg-warning bg-opacity-10 p-2 rounded-circle me-3">
-                <i className="fa-solid fa-medal text-warning"></i>
-              </div>
-              <div>
-                <h5 className="fw-bold">Quality Assurance</h5>
-                <p>Rigorous testing and quality checks before delivery.</p>
-              </div>
+   
+
+ 
+      <div className="cards p-4 p-lg-5 mb-5">
+        <h3 className="fw-bold mb-4 text-center">
+          Types of <span className="text-primary">Projects I Handle</span>
+        </h3>
+        <div className="row">
+          <div className="col-12 col-md-6 col-lg-3 mb-3">
+            <div className="d-flex align-items-center mb-2">
+              <i className="fa-solid fa-check text-success me-2"></i>
+              <span>Portfolio Websites</span>
             </div>
           </div>
-        </div>
-
-        <div className="col-12 col-lg-6">
-          <div className="cards p-4 h-100">
-            <h3 className="fw-bold mb-4">
-              My <span className="text-primary">Process</span>
-            </h3>
-            <div className="process-step mb-4">
-              <div className="d-flex align-items-center mb-2">
-                <span className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
-                      style={{ width: "30px", height: "30px" }}>1</span>
-                <h5 className="mb-0 fw-bold">Consultation</h5>
-              </div>
-              <p>Understanding your requirements and project goals.</p>
+          <div className="col-12 col-md-6 col-lg-3 mb-3">
+            <div className="d-flex align-items-center mb-2">
+              <i className="fa-solid fa-check text-success me-2"></i>
+              <span>Small Business Websites</span>
             </div>
-            <div className="process-step mb-4">
-              <div className="d-flex align-items-center mb-2">
-                <span className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
-                      style={{ width: "30px", height: "30px" }}>2</span>
-                <h5 className="mb-0 fw-bold">Planning</h5>
-              </div>
-              <p>Creating project timeline and detailed specifications.</p>
+          </div>
+          <div className="col-12 col-md-6 col-lg-3 mb-3">
+            <div className="d-flex align-items-center mb-2">
+              <i className="fa-solid fa-check text-success me-2"></i>
+              <span>Simple E-commerce Stores</span>
             </div>
-            <div className="process-step mb-4">
-              <div className="d-flex align-items-center mb-2">
-                <span className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
-                      style={{ width: "30px", height: "30px" }}>3</span>
-                <h5 className="mb-0 fw-bold">Development</h5>
-              </div>
-              <p>Coding and implementing the solution with regular updates.</p>
-            </div>
-            <div className="process-step">
-              <div className="d-flex align-items-center mb-2">
-                <span className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
-                      style={{ width: "30px", height: "30px" }}>4</span>
-                <h5 className="mb-0 fw-bold">Delivery</h5>
-              </div>
-              <p>Final testing, deployment, and project handover.</p>
+          </div>
+          <div className="col-12 col-md-6 col-lg-3 mb-3">
+            <div className="d-flex align-items-center mb-2">
+              <i className="fa-solid fa-check text-success me-2"></i>
+              <span>Website Redesigns</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Testimonials */}
-      {/* <div className="mb-5">
-        <h2 className="text-center fw-bold mb-4">
-          Client <span className="text-primary">Testimonials</span>
-        </h2>
-        <div className="row g-4">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="col-12 col-md-6 col-lg-4">
-              <div className="cards h-100 p-4">
-                <div className="d-flex align-items-center mb-3">
-                  <div className="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" 
-                       style={{ width: "50px", height: "50px" }}>
-                    <i className="fa-solid fa-user text-primary"></i>
-                  </div>
-                  <div>
-                    <h5 className="fw-bold mb-0">{testimonial.name}</h5>
-                    <p className="text-muted mb-0">{testimonial.role}</p>
-                  </div>
-                </div>
-                <p className="mb-3">"{testimonial.text}"</p>
-                <div className="text-warning">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <i key={i} className="fa-solid fa-star"></i>
-                  ))}
-                  {[...Array(5 - testimonial.rating)].map((_, i) => (
-                    <i key={i} className="fa-regular fa-star"></i>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div> */}
-
       {/* CTA Section */}
       <div className="text-center">
         <div className="cards p-5">
-          <h2 className="fw-bold mb-3">Ready to Start Your Project?</h2>
-          <p className="fs-5 mb-4">Let's discuss your ideas and create something amazing together!</p>
+          <h2 className="fw-bold mb-3">Let's Build Something Together!</h2>
+          <p className="fs-5 mb-4">
+            I'm eager to take on new challenges and help bring your ideas to life. 
+            Even small projects help me grow as a developer.
+          </p>
           <div className="d-flex flex-column flex-md-row justify-content-center gap-3">
             <a 
               href="#contact" 
               className="btn btn-primary btn-lg fw-bold px-4 py-3"
             >
               <i className="fa-solid fa-envelope me-2"></i>
-              Contact Me Now
+              Discuss Your Project
             </a>
-            <button  className="btn btn-outline-primary btn-lg fw-bold px-4 py-3">
+            <a 
+              href="/cv.pdf" 
+              download="SORN_PISETH_CV.pdf"
+              className="btn btn-outline-primary btn-lg fw-bold px-4 py-3 text-decoration-none"
+            >
               <i className="fa-solid fa-download me-2"></i>
               Download CV
-              <a download={``} href=""></a>
-            </button>
+            </a>
           </div>
+          <p className="mt-3 text-secondary">
+            <small>Perfect for: Students, Startups, Small Businesses, Personal Projects</small>
+          </p>
         </div>
       </div>
     </main>
